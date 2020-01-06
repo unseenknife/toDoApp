@@ -1,0 +1,36 @@
+extends layout
+
+block content
+   main#todolist
+      h1
+         | Todo List
+         span Get things done, one item at a time.
+      transition-group(name='todolist', tag='ul')
+         ul
+            each note in results
+               a(href='/~s1133868/P2_NodeJS_Opdracht/999/task/' + note.Id)
+                  li()
+                     row.width
+                        p.label.text-lowercase.dateToComplete #{note.dateToComplete}
+                        .actions
+                           input(type='checkbox' id='' + note.Id class='hidden')
+                           label(for='' + note.Id)
+                              i.material-icons.unchecked(aria-hidden='true') check_box_outline_blank
+                              i.material-icons.checked(aria-hidden='true') check_box
+                           button.btn-picto.delete-note(type='button', aria-label='Delete', title='Delete', data-id=note.Id, href="#")
+                              i.material-icons(aria-hidden='true', data-id=note.Id) delete
+                        p.label.font-weight-bold.noteTitle #{note.title}
+
+      form(action='/~s1133868/P2_NodeJS_Opdracht/999/task' method='post')
+         label() Add to the todo list
+         label(for='title') Title:
+            input(type='text', name='title', id='title', class='form-control' required)
+         label(for='description') Description:
+            input(type='text', name='description', id='description', class='form-control' required)
+         label(for='assignedTo') Assign to:
+            input(type='text', name='assignedTo', id='assignedTo', class='form-control' required)
+         label(for='dateToComplete') Due day:
+            input(type='date', name='dateToComplete', id='dateToComplete', class='form-control' required)
+         button(type='submit') Add item
+
+

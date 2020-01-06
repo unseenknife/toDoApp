@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    main#todolist
+        form(action='/~s1133868/P2_NodeJS_Opdracht/999/task/'+results[0].Id method='post')
+            .bottomBorder
+                input(type='text' value=results[0].title name='title' class="titleInput")
+                label(class='labelInput' for='dateInput') Due day:
+                    input(type='date' value=results[0].dateToComplete name='dateToComplete' id='dateInput' class="inputDate")
+                label(class='labelInput' for='assignedToInput') Assigned to:
+                    input(type='text' value=results[0].assignedTo name='assignedTo' id="assignedToInput" class="inputAssignTo")
+            transition-group(name='todolist', tag='ul')
+            textarea(name='description' cols=40 rows=10 class="inputDescription") #{results[0].description}
+            a(type='button' href='/~s1133868/P2_NodeJS_Opdracht/999/tasks' class='btn btn-secondary') Go back
+            button(type='submit') Update todo
+

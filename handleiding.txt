@@ -1,0 +1,17 @@
+
+site: https://adsd.clow.nl/~s1133868/P2_NodeJS_Opdracht/999/tasks
+
+https://adsd.clow.nl/~s1133868/P2_NodeJS_Opdracht/999/tasks
+here you can:
+- see all the notes you have added.
+- add a note
+- delete a note
+- check a note (that you have done it)
+
+if you click on a todo, you go to the show from 1 note
+https://adsd.clow.nl/~s1133868/P2_NodeJS_Opdracht/999/task/{id}
+here you can:
+- see who it's assigned to
+- see the description
+- edit a note (simply click on the title, due day, assigned to and description and you can edit it. click on update todo and it's updated)
+
